@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workday Countdown</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #5db6ff, #0052cc);
+      font-family: 'Helvetica', sans-serif;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+    }
+    .clouds {
+      background: url('https://i.imgur.com/BsS5cLm.png') no-repeat center top;
+      background-size: cover;
+      padding: 60px 20px 40px;
+    }
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 0.5em;
+    }
+    .countdown {
+      font-size: 2.8em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .labels {
+      font-size: 0.8em;
+      margin-bottom: 20px;
+    }
+    .labels span {
+      display: inline-block;
+      width: 80px;
+    }
+    .cta {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #6a5acd;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="clouds">
+    <h1>Workday Countdown</h1>
+    <div class="countdown" id="timer">Loading...</div>
+    <div class="labels"><span>days</span><span>hrs</span><span>min</span><span>sec</span></div>
+    <a class="cta" href="https://impl.wd108.myworkday.com/wday/authgwy/sbmmanagement1/login.htmld" target="_blank">Check it out!</a>
+  </div>
+  <script>
+    const target = new Date("January 1, 2026 00:00:00").getTime();
+    const timer = document.getElementById("timer");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = target - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      timer.innerHTML = `${days.toString().padStart(3, '0')} ${hours.toString().padStart(2, '0')} ${minutes.toString().padStart(2, '0')} ${seconds.toString().padStart(2, '0')}`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
