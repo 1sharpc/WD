@@ -1,85 +1,39 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Workday Countdown</title>
+  <title>Zeke's Home</title>
   <style>
     body {
-      background: linear-gradient(to bottom, #5db6ff, #0052cc);
-      font-family: 'Helvetica', sans-serif;
+      background-color: #111;
       color: white;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 40px;
-      margin: 0;
+      padding-top: 50px;
     }
-    .clouds {
-  background: url('https://raw.githubusercontent.com/1sharpc/WD/main/Workday2.png') center top no-repeat;
-  background-size: contain; /* or cover */
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 450px; /* Adj */
-  padding: 40px 5;
-}
-    <iframe src="https://1sharpc.github.io/WD/"></iframe>
-    }
-    h1 {
-      font-size: 2.4em;
-      margin-bottom: 0.5em;
-    }
-    .countdown {
-      font-size: 2.8em;
-      font-weight: bold;
-      margin: 40px 0;
-      white-space: nowrap;
-      display: flex;
-      justify-content: center;
-      gap: 10 px;
-    }
-    .labels {
-      font-size: 0.8em;
-      margin-bottom: 20px;
-    }
-    .labels span {
+    .button {
       display: inline-block;
-      width: 80px;
-    }
-    .cta {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 10px 20px;
-      background: #0078d4;
-      color: white;
+      padding: 20px 40px;
+      margin: 20px;
+      background-color: #ffcc00;
+      color: black;
       text-decoration: none;
-      border-radius: 8px;
+      font-size: 24px;
+      border-radius: 12px;
       font-weight: bold;
+    }
+    .button:hover {
+      background-color: #ffe680;
     }
   </style>
 </head>
 <body>
-  <div class="clouds">
-    <h1>Workday Countdown</h1>
-    <div class="countdown" id="timer">Loading...</div>
-    <div class="labels"><span>days</span><span>hrs</span><span>min</span><span>sec</span></div>
-    <a class="cta" href="https://impl.wd108.myworkday.com/wday/authgwy/sbmmanagement1/login.htmld" target="_blank">Check it out!</a>
-  </div>
-  <script>
-    const target = new Date("January 1, 2026 00:00:00").getTime();
-    const timer = document.getElementById("timer");
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = target - now;
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      timer.innerHTML = `${days.toString().padStart(3, '0')} ${hours.toString().padStart(2, '0')} ${minutes.toString().padStart(2, '0')} ${seconds.toString().padStart(2, '0')}`;
-    }
+  <h1>Hello, Zeke!</h1>
+  <p>Your Fortnite Dashboard</p>
 
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
+  <a class="button" href="https://www.fortnite.com/item-shop?lang=en-US">Open Item Shop</a>
+
+  <p style="margin-top:40px; font-size:14px; opacity:0.5;">Made by Dad 😎</p>
+
 </body>
 </html>
